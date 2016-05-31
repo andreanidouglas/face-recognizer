@@ -1,0 +1,7 @@
+com/andreanidr/model/Etiqueta.class
+com/andreanidr/model/Imagem.class
+com/andreanidr/model/FaceRecognitionModel.class
+com/andreanidr/controller/CarregadorDeModelo.class
+com/andreanidr/App.class
+com/andreanidr/App$1.class
+com/andreanidr/controller/CarregadorDeImagens.class
