@@ -66,7 +66,6 @@ public class DetectorDeFaces {
 			for (int i = 0; i < total; i++) {
 
 				CvRect rect = new CvRect(cvGetSeqElem(faces, i));
-				System.out.println(rect.x() + "" + rect.y());
 				cvSetImageROI(smallImage, rect);
 				IplImage crop = cvCreateImage(cvGetSize(smallImage), smallImage.depth(), smallImage.nChannels());
 				cvCopy(smallImage, crop);
@@ -74,7 +73,7 @@ public class DetectorDeFaces {
 				IplImage resize = cvCreateImage(new CvSize(128, 128), smallImage.depth(), smallImage.nChannels());
 				cvResize(smallImage, resize);
 				Mat newImage = new Mat(resize);
-				imwrite("resources/face" + counter++ + ".jpg", newImage);
+				imwrite("resources/" + imagemTemp.getName(), newImage);
 
 			}
 		}

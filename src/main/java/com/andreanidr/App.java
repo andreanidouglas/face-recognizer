@@ -16,6 +16,15 @@ public class App {
 		File root = new File(files);
 		File resourcesFolder = new File(resources);
 		
+		String [] obamaFiles = new String[3];
+		obamaFiles[0] = "/home/cmte/Projects/FaceRecognizer/imagens/obama1.jpg";
+		obamaFiles[1] = "/home/cmte/Projects/FaceRecognizer/imagens/obama1.jpg";
+		obamaFiles[2] = "/home/cmte/Projects/FaceRecognizer/imagens/obama1.jpg";
+		
+		String [] trumpFiles = new String[3];
+		trumpFiles[0] = "/home/cmte/Projects/FaceRecognizer/imagens/trump1.jpg";
+		trumpFiles[1] = "/home/cmte/Projects/FaceRecognizer/imagens/trump2.jpg";
+		trumpFiles[2] = "/home/cmte/Projects/FaceRecognizer/imagens/trump3.jpg";
 		
 		CarregadorDeModelo cdm = new CarregadorDeModelo();
 		cdm.criarNovoModelo(files + "/modelo1.yml");
@@ -32,8 +41,9 @@ public class App {
 
 		File[] imgFiles = root.listFiles(imgFilter);
 
-		for (int i = 0; i < imgFiles.length; i++) {
-			cdi.carregarImagem(imgFiles[i].getAbsolutePath(), imgFiles[i].getName(), 1);
+		for (int i=0;i<obamaFiles.length;i++){
+			cdi.carregarImagem(obamaFiles[i], "obama", 1);
+			cdi.carregarImagem(trumpFiles[i], "trump", 2);
 		}
 
 		try {
@@ -48,12 +58,23 @@ public class App {
 		File[] faces = resourcesFolder.listFiles(imgFilter);
 
 		for (int i = 0; i < faces.length-1; i++) {
-			cdi2.carregarImagem(faces[i].getAbsolutePath(), faces[i].getName(), i);
+			if (faces[i].getName().startsWith("obama")){
+				cdi2.carregarImagem(faces[i].getAbsolutePath(), faces[i].getName(), 1);
+			}
+			else
+			{
+				cdi2.carregarImagem(faces[i].getAbsolutePath(), faces[i].getName(), 2);
+			}
 		}
 
 		cdi2.treinarBancoDeImagens();
-		int i = cdi2.predizerImagem(faces[faces.length-1].getAbsolutePath());
+		int i = cdi2.predizerImagem("/home/cmte/face-recognizer/resources/trump1.jpg");
+		
+		System.out.println();
+		System.out.println();
 		System.out.println("Matched: " + i);
+		System.out.println();
+		System.out.println();
 	}
 
 }
