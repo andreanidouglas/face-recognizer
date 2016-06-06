@@ -4,8 +4,6 @@ import org.bytedeco.javacpp.opencv_core.Mat;
 import org.bytedeco.javacpp.opencv_core.MatVector;
 import org.bytedeco.javacpp.opencv_face.FaceRecognizer;
 
-import static org.bytedeco.javacpp.opencv_face.*;
-
 
 public class FaceRecognitionModel {
 

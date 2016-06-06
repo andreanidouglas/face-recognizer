@@ -1,6 +1,11 @@
+/home/cmte/face-recognizer/src/main/java/com/andreanidr/server/MainServer.java
 /home/cmte/face-recognizer/src/main/java/com/andreanidr/model/Etiqueta.java
 /home/cmte/face-recognizer/src/main/java/com/andreanidr/model/Imagem.java
+/home/cmte/face-recognizer/src/main/java/com/andreanidr/utils/ReadImagesAssets.java
 /home/cmte/face-recognizer/src/main/java/com/andreanidr/controller/CarregadorDeImagens.java
+/home/cmte/face-recognizer/src/main/java/com/andreanidr/utils/DetectorDeFaces.java
+/home/cmte/face-recognizer/src/main/java/com/andreanidr/App_bak.java
 /home/cmte/face-recognizer/src/main/java/com/andreanidr/App.java
 /home/cmte/face-recognizer/src/main/java/com/andreanidr/model/FaceRecognitionModel.java
 /home/cmte/face-recognizer/src/main/java/com/andreanidr/controller/CarregadorDeModelo.java
+/home/cmte/face-recognizer/src/main/java/com/andreanidr/server/MainHandler.java

@@ -1,7 +1,12 @@
 com/andreanidr/model/Etiqueta.class
 com/andreanidr/model/Imagem.class
+com/andreanidr/utils/DetectorDeFaces.class
 com/andreanidr/model/FaceRecognitionModel.class
 com/andreanidr/controller/CarregadorDeModelo.class
 com/andreanidr/App.class
-com/andreanidr/App$1.class
+com/andreanidr/App_bak.class
+com/andreanidr/App_bak$1.class
+com/andreanidr/server/MainHandler.class
+com/andreanidr/server/MainServer.class
 com/andreanidr/controller/CarregadorDeImagens.class
+com/andreanidr/utils/ReadImagesAssets.class

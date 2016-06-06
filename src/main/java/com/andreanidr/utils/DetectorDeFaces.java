@@ -17,7 +17,9 @@ import static org.bytedeco.javacpp.opencv_imgproc.cvResize;
 import static org.bytedeco.javacpp.opencv_objdetect.CV_HAAR_DO_ROUGH_SEARCH;
 import static org.bytedeco.javacpp.opencv_objdetect.CV_HAAR_FIND_BIGGEST_OBJECT;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.bytedeco.javacpp.Loader;
@@ -36,11 +38,14 @@ public class DetectorDeFaces {
 
 	static int counter = 0;
 
-	public DetectorDeFaces(Imagem imagemTemp) throws IOException {
+	public DetectorDeFaces(Imagem imagemTemp, String csvFile) throws IOException {
 		CvHaarClassifierCascade classificador;
+		BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile, true));
+
 		File arquivoDeClassificacao = new File("resources/haarcascade_frontalface_alt.xml");
 
 		if (!arquivoDeClassificacao.exists()) {
+			writer.close();
 			throw new IOException();
 		}
 
@@ -73,10 +78,13 @@ public class DetectorDeFaces {
 				IplImage resize = cvCreateImage(new CvSize(128, 128), smallImage.depth(), smallImage.nChannels());
 				cvResize(smallImage, resize);
 				Mat newImage = new Mat(resize);
-				imwrite("resources/" + imagemTemp.getName(), newImage);
-
+				imwrite("resources/assets/assets_faces/" + imagemTemp.getIdentifier() + "/" + imagemTemp.getName(),
+						newImage);
+				writer.write(imagemTemp.getName() + "," + imagemTemp.getIdentifier() + ","
+						+ "resources/assets/assets_faces/" + imagemTemp.getIdentifier() + "/" + imagemTemp.getName()
+						+ "," + imagemTemp.getEtiqueta().getId() + "\n");
+				writer.close();
 			}
 		}
 	}
-
 }

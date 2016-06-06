@@ -12,7 +12,6 @@ import org.bytedeco.javacpp.opencv_core.MatVector;
 import com.andreanidr.model.Etiqueta;
 import com.andreanidr.model.FaceRecognitionModel;
 import com.andreanidr.model.Imagem;
-import com.andreanidr.utils.DetectorDeFaces;
 
 public class CarregadorDeImagens {
 	
@@ -28,16 +27,8 @@ public class CarregadorDeImagens {
 		et.setId(identificador);
 		et.setNome(nome);
 		
-		Imagem im = new Imagem(path, et);
+		Imagem im = new Imagem(nome, path, et);
 		bancoDeImagens.add(im);
-	}
-	
-	public void detectarFaces() throws IOException
-	{
-		for (Imagem imagem: bancoDeImagens)
-		{
-			DetectorDeFaces ddf = new DetectorDeFaces(imagem);
-		}
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -65,9 +56,9 @@ public class CarregadorDeImagens {
 				
 	}
 	
-	public int predizerImagem(String caminho){
+	public int predizerImagem(String nome, String caminho){
 		Etiqueta et = new Etiqueta();
-		Imagem im = new Imagem(caminho, et );
+		Imagem im = new Imagem(nome, caminho, et );
 		return frm.predizerImagem(im.getImagemPB());
 	}
 	

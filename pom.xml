@@ -26,5 +26,25 @@
     <artifactId>javacv</artifactId>
     <version>1.2</version>
   </dependency>
+  <!-- http://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.4</version>
+</dependency>
+  <!-- http://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.2</version>
+</dependency>
+<!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
+<dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-server</artifactId>
+    <version>9.3.10.M0</version>
+</dependency>
+
+  
   </dependencies>
 </project>
